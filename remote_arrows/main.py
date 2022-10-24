@@ -1,7 +1,8 @@
-from core.service import ArrowControlAdapter
 from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+
+from remote_arrows.service import ArrowControlAdapter
 
 # Create your views here.
 
