@@ -45,9 +45,7 @@ if __name__ == "__main__":
         if interface in ["eth0", "wlp2s0"] or interface.startswith("enp"):
             for link in netifaces.ifaddresses(interface).get(netifaces.AF_INET, {}):
                 ip_addr = link.get("addr", None)
-                # ignore loopback address
-                if ip_addr and ip_addr != "127.0.0.1":
-                    ip_list.append(ip_addr)
+                ip_list.append(ip_addr)
     print("Try to connect to one of the following in your phone")
     print([ip + f":{port}" for ip in ip_list], sep="\n")
     uvicorn.run(app, host=host, port=port)
