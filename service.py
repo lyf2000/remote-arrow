@@ -6,4 +6,4 @@ class ArrowControlAdapter:
 
     @classmethod
     def click_keyb(cls, action: str):
-        pyautogui.hotkey("ctrl", "shift", "c")
+        pyautogui.press([action])
