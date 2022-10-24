@@ -49,5 +49,5 @@ if __name__ == "__main__":
                 if ip_addr and ip_addr != "127.0.0.1":
                     ip_list.append(ip_addr)
     print("Try to connect to one of the following in your phone")
-    print(ip_list, sep="\n")
+    print([ip + f":{port}" for ip in ip_list], sep="\n")
     uvicorn.run(app, host=host, port=port)
